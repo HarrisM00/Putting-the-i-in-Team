@@ -5,16 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const card = document.createElement('div');
     card.className = `col-sm mb-4 ${cardClass}`;
 
-    card.innerHTML = `
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="${imgSrc}" alt="${title}">
-        <div class="card-body">
-          <h5 class="card-title">${title}</h5>
-          <p class="card-text">${description}</p>
-        </div>
-      </div>
-    `;
-
     container.appendChild(card);
   }
 
