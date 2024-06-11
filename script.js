@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.getElementById('cards-container');
 
-  function createCard(title, imgSrc, description, cardClass = '') {
+  function createCard() {
     const card = document.createElement('div');
     card.className = `col-sm mb-4 ${cardClass}`;
 
