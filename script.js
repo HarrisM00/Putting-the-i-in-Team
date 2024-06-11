@@ -1,12 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.getElementById('cards-container');
 
-  function createCard() {
+
+  function createCard(title, imgSrc, description, cardClass = '') {
     const card = document.createElement('div');
     card.className = `col-sm mb-4 ${cardClass}`;
 
+
+    card.innerHTML = `
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="${imgSrc}" alt="${title}">
+        <div class="card-body">
+          <h5 class="card-title">${title}</h5>
+          <p class="card-text">${description}</p>
+        </div>
+      </div>
+    `;
+
+
     container.appendChild(card);
   }
+
 
   createCard('Batman', 'batman.jpg', 'A member of the Justice League and an iconic hero in DC Comics. His real identity is Bruce Wayne, a wealthy businessman. He dedicated his life to fighting crime after the murder of his parents.');
   createCard('Superman', 'superman.png', 'Also known as Man of Steel and Clark Kent. Born on another planet called Krypton, he was sent to Earth as a baby. He has superpowers such as flight, super strength, and laser vision.', 'text-bg-primary mb-3');
