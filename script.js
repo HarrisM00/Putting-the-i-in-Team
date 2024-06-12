@@ -63,3 +63,26 @@ const heroes = [
     class: ''
   }
 ];
+function createCard(hero) {
+  const card = document.createElement('div');
+  card.className = `col-sm mb-4 ${hero.class}`;
+
+  card.innerHTML = `
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="${hero.img}" alt="${hero.name}">
+      <div class="card-body">
+        <h5 class="card-title">${hero.name}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">${hero.position}</h6>
+        <p class="card-text"><strong>Skills:</strong> ${hero.skills.join(', ')}</p>
+        <p class="card-text"><strong>Strengths:</strong> ${hero.strengths.join(', ')}</p>
+        <p class="card-text"><strong>Weaknesses:</strong> ${hero.weaknesses.join(', ')}</p>
+        <p class="card-text">${hero.biography}</p>
+      </div>
+    </div>
+  `;
+
+  container.appendChild(card);
+}
+
+heroes.forEach(hero => createCard(hero));
+});
